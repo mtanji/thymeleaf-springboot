@@ -19,18 +19,20 @@
 	        <th>Tipo</th>
 	        <th>Telefone</th>
 	        <th>Email</th>
+	        <th>Validade</th>
 	      </tr>
 	    </thead>
 	    <tbody>
-	      <tr th:each="sb : ${greetings}">
-	        <td th:text="${sb.id}">0</td>
-	        <td th:text="${sb.content}">Olá Mundo</td>
-	        <td th:switch="${sb.tipo}">
+	      <tr th:each="greet : ${greetings}">
+	        <td th:text="${greet.id}">0</td>
+	        <td th:text="${greet.content}">Olá Mundo</td>
+	        <td th:switch="${greet.tipo}">
 	        	<span th:case="'P'" th:text="Pago" />
 	        	<span th:case="'G'" th:text="Gratuito" />
 	        </td>
-	        <td th:text="${sb.telefone}">11-45788-4567</td>
-	        <td th:text="${sb.email}">quem@onde.com.br</td>
+	        <td th:text="${greet.telefone}">11-45788-4567</td>
+	        <td th:text="${greet.email}">quem@onde.com.br</td>
+	        <td th:text="${greet.validade}">3</td>
 	      </tr>
 	    </tbody>
 	  </table>

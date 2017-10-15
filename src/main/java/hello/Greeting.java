@@ -7,6 +7,7 @@ public class Greeting {
     private Character tipo;
     private String telefone;
     private String email;
+    private Integer validade;
 
     public long getId() {
         return id;
@@ -46,6 +47,14 @@ public class Greeting {
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+
+	public Integer getValidade() {
+		return validade;
+	}
+
+	public void setValidade(Integer validade) {
+		this.validade = validade;
 	}
 
 }

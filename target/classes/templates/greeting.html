@@ -5,13 +5,14 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
-	<h1>Form</h1>
+	<h1>Formulário para envio de mensagem</h1>
     <form action="#" th:action="@{/greeting}" th:object="${greeting}" method="post">
     	<p>Id: <input type="text" th:field="*{id}" /></p>
         <p>Message: <input type="text" th:field="*{content}" required=""/></p>
         <p>P/G: <input type="text" th:field="*{tipo}" /></p>
         <p>Telefone: <input type="tel" th:field="*{telefone}" /></p>
         <p>E-mail: <input type="email" th:field="*{email}" placeholder="Digite seu email" /></p>
+        <p>Validade (dias): <input type="number" th:field="*{validade}" /></p>
         <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
     </form>
 </body>
