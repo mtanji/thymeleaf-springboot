@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head> 
+    <title>Getting Started: Handling Form Submission</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h1>Result</h1>
+    <p th:text="'id: ' + ${greeting.id}" />
+    <p th:text="'content: ' + ${greeting.content}" />
+    <a href="/greeting">Submit another message</a>
+    
+    <div th:unless="${#lists.isEmpty(greetings)}">
+      <table>
+	    <thead>
+	      <tr>
+	        <th>Id</th>
+	        <th>Mensagem</th>
+	        <th>Tipo</th>
+	        <th>Telefone</th>
+	        <th>Email</th>
+	      </tr>
+	    </thead>
+	    <tbody>
+	      <tr th:each="sb : ${greetings}">
+	        <td th:text="${sb.id}">0</td>
+	        <td th:text="${sb.content}">Olá Mundo</td>
+	        <td th:switch="${sb.tipo}">
+	        	<span th:case="'P'" th:text="Pago" />
+	        	<span th:case="'G'" th:text="Gratuito" />
+	        </td>
+	        <td th:text="${sb.telefone}">11-45788-4567</td>
+	        <td th:text="${sb.email}">quem@onde.com.br</td>
+	      </tr>
+	    </tbody>
+	  </table>
+    </div>
+</body>
+</html>
