@@ -1,8 +1,5 @@
 package hello;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,17 +15,9 @@ public class GreetingController {
         return "greeting";
     }
 
-//    @PostMapping("/greeting")
-//    public String greetingSubmit(@ModelAttribute Greeting greeting) {
-//        return "result";
-//    }
-
-    private List<Greeting> greetings = new ArrayList<>();
-
     @PostMapping("/greeting")
-    public String greetingSubmit(Model model , @ModelAttribute Greeting greeting) {
-    	greetings.add(greeting);
-    	model.addAttribute("greetings", greetings);
-        return "result2";
+    public String greetingSubmit(@ModelAttribute Greeting greeting) {
+        return "result";
     }
+
 }
